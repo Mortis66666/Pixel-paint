@@ -101,6 +101,12 @@ def main():
 				if (pressed[pygame.K_LCTRL] or pressed[pygame.K_RCTRL]) and pressed[pygame.K_s]:
 					save()
 
+				key = pygame.key.name(event.key)
+				for color in colors:
+					if color.startswith(key):
+						index = colors.index(color)
+						break
+
 			elif event.type == pygame.MOUSEBUTTONDOWN:
 				handle_click(colors[index])
 
